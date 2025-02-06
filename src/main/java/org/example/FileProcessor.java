@@ -18,4 +18,34 @@ public class FileProcessor {
         }
         return lines;
     }
+
+    public void classifyLines(List<String> lines) {
+        for (String line : lines) {
+            if (isInteger(line)) {
+                System.out.println("Integer: " + line);
+            } else if (isFloat(line)) {
+                System.out.println("Float: " + line);
+            } else {
+                System.out.println("String: " + line);
+            }
+        }
+    }
+
+    private boolean isInteger(String str) {
+        try {
+            Integer.parseInt(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    private boolean isFloat(String str) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
 }

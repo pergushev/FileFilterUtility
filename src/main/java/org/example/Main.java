@@ -9,9 +9,8 @@ public class Main {
 
         try {
             for (String file : parser.getInputFiles()) {
-                System.out.println("Processing file: " + file);
                 List<String> lines = fileProcessor.readFile(file);
-                System.out.println("Lines: " + lines);
+                fileProcessor.classifyLines(lines);
             }
         } catch (Exception e) {
             System.err.println("Error: " + e.getMessage());
