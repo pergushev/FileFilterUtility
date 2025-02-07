@@ -1,10 +1,11 @@
 package org.example;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 
 public class FileProcessor {
@@ -19,14 +20,29 @@ public class FileProcessor {
         return lines;
     }
 
-    public void classifyLines(List<String> lines) {
+    public void writeOutputFiles(Map<String, List<String>> dataMap, String outputDir, String prefix, boolean appendMode) throws IOException {
+        for (Map.Entry<String, List<String>> entry : dataMap.entrySet()) {
+            String fileName = prefix + entry.getKey() + ".txt";
+            Path outputPath = Path.of(outputDir, fileName);
+            Files.createDirectories(outputPath.getParent());
+
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputPath.toFile(), appendMode))) {
+               for (String line : entry.getValue()) {
+                   writer.write(line);
+                   writer.newLine();
+               }
+            }
+        }
+    }
+
+    public void classifyLines(List<String> lines, Map<String, List<String >> dataMap) {
         for (String line : lines) {
             if (isInteger(line)) {
-                System.out.println("Integer: " + line);
+                dataMap.computeIfAbsent("integers", k -> new ArrayList<>()).add(line);
             } else if (isFloat(line)) {
-                System.out.println("Float: " + line);
+                dataMap.computeIfAbsent("floats", k -> new ArrayList<>()).add(line);
             } else {
-                System.out.println("String: " + line);
+                dataMap.computeIfAbsent("strings", k -> new ArrayList<>()).add(line);
             }
         }
     }
