@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24642eb2-2db8-48a7-945a-429959a15258" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/CommandLineParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/FileProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Statistics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CommandLineParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FileProcessor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FileProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FileProcessor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +34,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.FileFilterUtility.executor": "Run",
     "Application.Main.executor": "Run",
+    "Maven.FileFilterUtility [clean].executor": "Run",
     "Maven.FileFilterUtility [package].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
@@ -110,7 +105,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1739202858470</updated>
-      <workItem from="1739202859858" duration="11919000" />
+      <workItem from="1739202859858" duration="15223000" />
     </task>
     <servers />
   </component>

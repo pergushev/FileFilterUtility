@@ -12,7 +12,7 @@ public class FileProcessor {
     private final String prefix;
     private final boolean appendMode;
     private final Map<String, List<String>> dataMap = new HashMap<>();
-    private final Statistics statistics = new Statistics(); // Добавляем объект Statistics
+    private final Statistics statistics = new Statistics();
 
     public FileProcessor(String outputDir, String prefix, boolean appendMode) {
         this.outputDir = outputDir;
@@ -50,11 +50,8 @@ public class FileProcessor {
 
     private boolean isInteger(String s) {
         try {
-            if (s.matches("-?\\d+")) { // Регулярное выражение для целых чисел
-                Long.parseLong(s); // Попытка преобразования в Long
-                return true;
-            }
-            return false;
+            Long.parseLong(s);
+            return true;
         } catch (NumberFormatException e) {
             return false;
         }
@@ -63,7 +60,7 @@ public class FileProcessor {
     private boolean isFloat(String s) {
         try {
             Double.parseDouble(s);
-            return !isInteger(s);
+            return true;
         } catch (NumberFormatException e) {
             return false;
         }
@@ -85,6 +82,6 @@ public class FileProcessor {
     }
 
     public Statistics getStatistics() {
-        return statistics; // Возвращаем объект Statistics
+        return statistics;
     }
 }
